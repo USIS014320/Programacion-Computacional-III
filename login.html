@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="LOGIN/css/logiar.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+  <!--Código JavaScript-->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.message a').click(function () {
+        $('form').animate({
+          height: "toggle",
+          opacity: "toggle"
+        }, "slow");
+        $('#idMensajeEror').hide();
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="alert alert-success">
+    <strong>Bienvenido </strong> Pudes iniciar sesion o registrarte en caso de que no tengas una cuenta.
+  </div>
+  <div clas="Login-page">
+    <div class="form">
+      <form class="register-form" action="/registrar" method="POST">
+        <input type="email" name="nmCorreoRegistro" required placeholder="correro" />
+        <input type="password" name="nmPasswordRegistro" required placeholder="password" />
+        <input type="text" name="nmNombreRegistro" required placeholder="nombre" />
+        <button type="submit">Registrar</button>
+        <p class="message"> ¿Ya estas registrado? <a href="#">Ingresa</a></p>
+      </form>
+      <form class="login-form" action="/ingresar" method="POST">
+        <input type="email" name="nmCorreoLogin" required placeholder="correo" />
+        <input type="password" name="nmPasswordLogin" required placeholder="password" />
+        <button type="submit">Ingresar</button>
+        <p class="message">¿No estas registrado? <a href="#">Registrate</a></p>
+      </form>
+
+    </div>
+  </div>
+</body>
+
+</html>
